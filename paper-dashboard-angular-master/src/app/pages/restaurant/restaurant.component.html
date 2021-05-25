@@ -1,0 +1,26 @@
+<h3>
+  <ul>
+    <li *ngFor="let wasey of _restaurant.data">
+      {{wasey.code}}
+      {{wasey.message}}
+      {{wasey.countryName}}
+
+    </li>
+  </ul>
+
+  <!-- countryName: {{_restaurant.countryName}} <br> -->
+
+</h3>
+
+<!-- <button (click)="getData()" class="btn btn-primary btn-block btn-lg">Get All</button> -->
+
+<!-- <form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Favorite food</mat-label>
+    <input matInput placeholder="Ex. Pizza" value="Sushi">
+  </mat-form-field>
+</form> -->
+
+  <input type="text" placeholder="Add Country" [(ngModel)]="countryName" >
+
+  <button mat-button color="primary" (click)="postCountry()">Add Country</button>
