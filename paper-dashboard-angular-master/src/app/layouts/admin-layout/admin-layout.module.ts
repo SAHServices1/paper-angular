@@ -15,7 +15,6 @@ import { NotificationsComponent }   from '../../pages/notifications/notification
 import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RestaurantComponent } from 'app/pages/restaurant/restaurant.component';
-import { ItemComponent } from 'app/pages/item/item.component';
 import { CategoryComponent } from "app/pages/category/category.component";
 
 @NgModule({

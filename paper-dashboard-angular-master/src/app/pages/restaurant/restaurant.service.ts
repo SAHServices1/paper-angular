@@ -19,12 +19,6 @@ export class RestaurantService {
     })
   }
 
-  // public postData(){
-  //   return this._http.post("https://10.0.115.117:9003/country",{
-  //     observe: 'response'
-  //   })
-  // }
-
   public create(countryName: string){
     return this._http.post('http://10.0.115.117:9003/country', {
       "countryName": countryName
