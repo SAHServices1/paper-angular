@@ -1,4 +1,3 @@
-// import { RestaurantComponent } from './../../restaurant/restaurant.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,13 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class RestaurantService {
 
-  baseUrl: string = "https://10.0.115.117:9003/country";
-  // http: any;
+  baseUrl: string = "https://10.0.115.88:9003/country";
 
   constructor(private _http: HttpClient) { }
 
   public getData(){
-    return this._http.get("http://10.0.115.117:9003/country", {
+    return this._http.get("http://10.0.115.88:9003/country", {
       observe: 'response'
     })
   }

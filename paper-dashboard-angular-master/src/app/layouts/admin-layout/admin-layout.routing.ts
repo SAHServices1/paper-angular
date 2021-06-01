@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
+import { LoginComponent } from "app/login/login.component";
 import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
 import { UserComponent } from '../../pages/user/user.component';
 import { TableComponent } from '../../pages/table/table.component';
@@ -13,6 +14,7 @@ import { ItemComponent } from 'app/pages/item/item.component';
 import { CategoryComponent } from "app/pages/category/category.component";
 
 export const AdminLayoutRoutes: Routes = [
+    {path: 'login',           component:LoginComponent},
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user',           component: UserComponent },
     { path: 'table',          component: TableComponent },

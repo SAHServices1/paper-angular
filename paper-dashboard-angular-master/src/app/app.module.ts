@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -20,21 +21,19 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-// import { MaterialModule } from "@angular/material/button";
 import {MatToolbarModule} from '@angular/material/toolbar';
-
 import {MatTabsModule} from '@angular/material/tabs';
-
 import {MatTreeModule} from '@angular/material/tree';
-
 import {MatInputModule} from '@angular/material/input';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    ItemComponent,
+    ItemComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -56,6 +55,7 @@ import {MatInputModule} from '@angular/material/input';
     MatTreeModule,
     MatTabsModule,
     MatInputModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { ItemService } from './item.service';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { PeriodicElement } from './item';
 
 @Component({
   selector: 'app-item',
@@ -8,8 +9,6 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-
-  _item : any = '';
 
   dataSource = ELEMENT_DATA;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
@@ -32,21 +31,8 @@ export class ItemComponent implements OnInit {
   constructor(private _itemService:ItemService) { }
 
   ngOnInit(){
-    this._itemService.getData1().subscribe((data) => {
-      this._item = data.body;
-      console.log(this._item);},
-      (error) => {
-        console.log(error);
-    })
   }
 
-}
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -61,5 +47,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
   {position: 11, name: 'Sodium', weight: 20.1797, symbol: 'Na'},
+
 ];
 
