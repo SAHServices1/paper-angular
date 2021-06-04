@@ -1,29 +1,161 @@
-<body class="main-bg">
-  <div class="login-container text-c animated flipInX">
-    <div>
-      <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+<section class="user">
+  <div class="user_options-container">
+    <div class="user_options-text">
+      <div class="user_options-unregistered">
+        <h2 class="user_unregistered-title"> <u>Company Overview</u> </h2>
+        <p class="user_unregistered-text"> <b>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen
+          book. It has survived not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially unchanged.
+          It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+          Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+          Lorem Ipsum.
+        </b> </p>
+        <!-- <button class="user_unregistered-signup" id="signup-button" (click)="signupShuffle()">Sign up</button> -->
+      </div>
+
+      <div class="user_options-registered">
+        <h2 class="user_registered-title">Have an account?</h2>
+        <p class="user_registered-text">Enter Your credential to login.</p>
+        <!-- <button class="user_registered-login" id="login-button" (click)="loginShuffle()">Login</button> -->
+      </div>
     </div>
-    <h2 class="text-whitesmoke">Sign In</h2>
-    <!-- <p class="text-whitesmoke">Sign In</p> -->
-    <div class="container-content">
-      <form class="margin-t">
 
-        <div class="form-group">
-          <input type="email" class="form-control" placeholder="Email" required="required" #businessEmail>
-        </div>
-        <div class="form-group">
-          <input type="password" class="form-control" placeholder= "********"
-          pattern=".+@globex.com" size="30" required #businessPassword>
-        </div>
-
-        <button type="button" (click)="userLogin(businessEmail.value,businessPassword.value)" value="Log in"
-          value="Login" class="form-button button-l margin-b">Sign In</button>
-
-        <a class="text-darkyellow" href="#"><small>Forgot your password?</small></a>
-        <p class="text-whitesmoke text-center"><small>Do not have an account?</small></p>
-        <a class="text-darkyellow" href="#"><small>Sign Up</small></a>
-      </form>
-      <p class="margin-t text-whitesmoke"><small> MonetDT &copy; 2021</small> </p>
+    <div class="user_options-forms" id="user_options-forms">
+      <div class="user_forms-login">
+        <h2 class="forms_title">Login</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="email" placeholder="Email" class="forms_field-input" required autofocus #businessEmail />
+            </div>
+            <div class="forms_field">
+              <input id="password" type="password" placeholder="*********" class="forms_field-input" required #businessPassword />
+              <!-- <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span> -->
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <button type="button" class="forms_buttons-forgot">Forgot password?</button>
+            <input type="button" (click)="userLogin(businessEmail.value,businessPassword.value)" value="Log In"
+              class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+      <!-- first On -->
+      <!-- <div class="user_forms-signup" *ngIf="first">
+        <h2 class="forms_title">Sign Up</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="form-group">
+              <input type="file" placeholder="Upload Image" name="fileToUpload" id="fileToUpload" required autofocus
+                #profileImage>
+              <input type="button" value="Upload Image" name="submit">
+            </div>
+            <br>
+            <div class="forms_field">
+              <input type="text" placeholder="First Name" class="forms_field-input" required autofocus #firstName />
+            </div>
+            <div class="forms_field">
+              <input type="text" placeholder="Last Name" class="forms_field-input" required autofocus #lastName />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="button" (click)="first=false;second=true;" value="Next" class="forms_buttons-action">
+          </div>
+        </form>
+      </div> -->
+      <!-- second on -->
+      <!-- <div class="user_forms-signup" *ngIf="second">
+        <h2 class="forms_title">Sign Up</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="email" placeholder="Business Email" class="forms_field-input" required="" autofocus
+                #businessEmail />
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="*******" class="forms_field-input" required autofocus #password />
+            </div>
+            <br>
+            <div class="forms_field">
+              <input type="number" placeholder="Mobile Number" class="forms_field-input" required autofocus #mobileNo />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="button" (click)="first=true;second=false;" value="Previous" class="forms_buttons-action">&nbsp;
+            <input type="button" (click)="second=false;third=true;" value="Next" class="forms_buttons-action">
+          </div>
+        </form>
+      </div> -->
+      <!-- third on -->
+      <!-- <div class="user_forms-signup" *ngIf="third">
+        <h2 class="forms_title">Sign Up</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="text" placeholder="Address" class="forms_field-input" required autofocus #address />
+            </div>
+            <div class="forms_field">
+              <input type="tetx" placeholder="Industry Type" class="forms_field-input" required autofocus
+                #industryType />
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="City" class="forms_field-input" required autofocus #city />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="button" (click)="second=true;third=false;" value="Previous" class="forms_buttons-action">&nbsp;
+            <input type="button" (click)="third=false;fourth=true;" value="Next" class="forms_buttons-action">
+          </div>
+        </form>
+      </div> -->
+      <!-- fourth On -->
+      <!-- <div class="user_forms-signup" *ngIf="fourth">
+        <h2 class="forms_title">Sign Up</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="number" placeholder="Postal Code" class="forms_field-input" required autofocus #postalCode />
+            </div>
+            <div class="forms_field">
+              <input type="text" placeholder="Status" class="forms_field-input" required autofocus #status />
+            </div>
+            <div class="forms_field">
+              <input type="text" placeholder="Role" class="forms_field-input" required autofocus #role />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="button" (click)="third=true;fourth=false;" value="Previous" class="forms_buttons-action">&nbsp;
+            <input type="button" (click)="fourth=false;fifth=true;" value="Next" class="forms_buttons-action">
+          </div>
+        </form>
+      </div> -->
+      <!-- fifth ON -->
+      <!-- <div class="user_forms-signup" *ngIf="fifth">
+        <h2 class="forms_title">Sign Up</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="form-group">
+              <input type="text" placeholder="Admin" class="forms_field-input" required="" autofocus #admin />
+            </div>
+            <div class="forms_field">
+              <input type="text" placeholder="Company" class="forms_field-input" required autofocus #company />
+            </div>
+            <div class="forms_field">
+              <input type="text" placeholder="Country" class="forms_field-input" required autofocus #country />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="button" (click)="fourth=true;fifth=false;" value="Previous" class="forms_buttons-action">&nbsp;
+            <input type="button"
+              (click)="register('', firstName.value, lastName.value, businessEmail.value, password.value,
+            mobileNo.value, address.value, industryType.value, city.value, postalCode.value, status.value, role.value, admin.value, company.value, country.value)"
+              value="Sign Up" value=Signup class="forms_buttons-action">
+          </div>
+        </form>
+      </div> -->
     </div>
   </div>
-</body>
+</section>

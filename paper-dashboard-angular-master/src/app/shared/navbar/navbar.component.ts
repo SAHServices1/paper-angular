@@ -1,3 +1,4 @@
+import { SignupComponent } from './../../signup/signup.component';
 import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { ROUTES } from '../../sidebar/sidebar.component';
 import { Router } from '@angular/router';
@@ -91,5 +92,6 @@ export class NavbarComponent implements OnInit{
         }
 
       }
+
 
 }

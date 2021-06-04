@@ -1,3 +1,4 @@
+import { LoginComponent } from 'app/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
@@ -26,6 +27,14 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatInputModule} from '@angular/material/input';
 
+import { CommonModule } from '@angular/common';
+import { SignupComponent } from './signup/signup.component';
+import { BrowserModule } from '@angular/platform-browser';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+// import { MDBBootstrapModule } from 'angular-bootstrap-md';
+// import { CdkTree } from '@angular/CdkTree';
+
 
 
 
@@ -33,9 +42,12 @@ import {MatInputModule} from '@angular/material/input';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    ItemComponent
+    ItemComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
+    MatCardModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes,{
       useHash: true
@@ -44,6 +56,8 @@ import {MatInputModule} from '@angular/material/input';
     NavbarModule,
     ToastrModule.forRoot(),
     FooterModule,
+    CommonModule,
+    BrowserModule,
     FixedPluginModule,
     HttpClientModule,
     MatSliderModule,
@@ -56,6 +70,10 @@ import {MatInputModule} from '@angular/material/input';
     MatTabsModule,
     MatInputModule,
     FormsModule,
+    MatGridListModule,
+    MatCardModule,
+    // CdkTree
+    // MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

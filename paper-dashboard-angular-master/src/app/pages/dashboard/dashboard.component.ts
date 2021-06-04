@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Chart from 'chart.js';
+import * as Chart from 'chart.js';
+// import Chart from 'chart.js';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class DashboardComponent implements OnInit{
   public chartColor;
   public chartEmail;
   public chartHours;
+  private _canvas: HTMLCanvasElement;
 
     ngOnInit(){
       this.chartColor = "#FFFFFF";
@@ -80,7 +82,7 @@ export class DashboardComponent implements OnInit{
             }],
 
             xAxes: [{
-              barPercentage: 1.6,
+              // barPercentage: 1.6,
               gridLines: {
                 drawBorder: false,
                 color: 'rgba(255,255,255,0.1)',
@@ -149,7 +151,7 @@ export class DashboardComponent implements OnInit{
             }],
 
             xAxes: [{
-              barPercentage: 1.6,
+              // barPercentage: 1.6,
               gridLines: {
                 drawBorder: false,
                 color: 'rgba(255,255,255,0.1)',

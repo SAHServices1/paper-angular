@@ -1,3 +1,4 @@
+import { SignupComponent } from './../../signup/signup.component';
 import { Routes } from '@angular/router';
 
 import { LoginComponent } from "app/login/login.component";
@@ -14,7 +15,7 @@ import { ItemComponent } from 'app/pages/item/item.component';
 import { CategoryComponent } from "app/pages/category/category.component";
 
 export const AdminLayoutRoutes: Routes = [
-    {path: 'login',           component:LoginComponent},
+    { path: 'signup',         component:SignupComponent },
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user',           component: UserComponent },
     { path: 'table',          component: TableComponent },

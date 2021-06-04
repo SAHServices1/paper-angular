@@ -11,20 +11,46 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
 
+  signupButton: any = '';
+  loginButton: any = '';
+  userForms: any = '';
+
+  first: any = true;
+  second: any = false;
+  third: any = false;
+  fourth: any = false;
+  fifth: any = false;
+  // first_name: any = '';
 
   constructor(private _loginService: LoginService,
     private router: Router,
     private toaster: ToastrService) { }
 
   ngOnInit() {
-    //on load
-
+    this.signupButton = document.getElementById('signup-button'),
+      this.loginButton = document.getElementById('login-button'),
+      this.userForms = document.getElementById('user_options-forms')
   }
 
   clickMe() {
     //onCLick
 
   }
+
+  // signupShuffle() {
+  //   this.signupButton.addEventListener('click', () => {
+  //     this.userForms.classList.remove('bounceRight')
+  //     this.userForms.classList.add('bounceLeft')
+  //   }, false)
+  // }
+
+  // loginShuffle() {
+  //   this.loginButton.addEventListener('click', () => {
+  //     this.userForms.classList.remove('bounceLeft')
+  //     this.userForms.classList.add('bounceRight')
+  //   }, false)
+  // }
+
 
   userLogin(email, password) {
     if (email === '') {
@@ -54,7 +80,7 @@ export class LoginComponent implements OnInit {
       );
     }
     else {
-      this._loginService.getData(email, password).subscribe((data) => {
+      this._loginService.postData(email, password).subscribe((data) => {
         console.log(data.body);
 
         if (data.body.code === 1) {
@@ -78,4 +104,29 @@ export class LoginComponent implements OnInit {
       })
     }
   }
-}
+
+  // register(image, fname, lname, email, password, mNO, address, indType, city, postalcode,
+  //   status, role, admin, company, country) {
+  //   this._loginService.registerUser(image, fname, lname, email, password, mNO, address, indType,
+  //     city, postalcode, status, role, admin, company, country).subscribe((data) => {
+  //       if (data.body.code == 1) {
+  //         this.router.navigate(['dashboard']);
+  //       }
+  //       else {
+  //         this.toaster.info(
+  //           '<span data-notify="icon" class="nc-icon nc-bell-55"></span><span data-notify="message"> ' + data.body.message + '</span>',
+  //           "",
+  //           {
+  //             timeOut: 2000,
+  //             closeButton: true,
+  //             enableHtml: true,
+  //             toastClass: "alert alert-info alert-with-icon",
+  //             positionClass: "toast-top-right"
+  //           }
+  //         );
+  //       }
+  //     }, (error) => {
+  //       console.log(error);
+  //     })
+  //   }
+  }
