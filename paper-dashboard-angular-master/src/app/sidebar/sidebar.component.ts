@@ -2,37 +2,39 @@ import { Component, OnInit } from '@angular/core';
 
 
 export interface RouteInfo {
-    path: string;
-    title: string;
-    icon: string;
-    class: string;
+  path: string;
+  title: string;
+  icon: string;
+  class: string;
 }
 
 export const ROUTES: RouteInfo[] = [
-    // {path: '/login',          title: 'Login',             icon: '',             class: ''},
-    {path:  '/signup',        title: 'Sign Up',           icon:'nc-circle-10',              class:''},
-    { path: '/dashboard',     title: 'Dashboard',         icon:'nc-bank',       class: '' },
-    { path: '/rest',          title: 'Restauratnt',       icon:'nc-box-2',      class: '' },
-    { path: '/item',          title: 'Item',              icon: 'nc-basket',    class: ''},
-    { path: '/category',      title: 'Category',          icon: 'nc-tile-56',    class: ''},
-    { path: '/icons',         title: 'Icons',             icon:'nc-diamond',    class: '' },
-    { path: '/maps',          title: 'Maps',              icon:'nc-pin-3',      class: '' },
-    { path: '/notifications', title: 'Notifications',     icon:'nc-bell-55',    class: '' },
-    { path: '/user',          title: 'Users List',      icon:'nc-single-02',  class: '' },
-    { path: '/table',         title: 'Table List',        icon:'nc-tile-56',    class: '' },
-    { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
+  // {path: '/login',title: 'Login',icon: '',class: ''},
+  { path: '/dashboard', title: 'Dashboard', icon: 'nc-bank', class: '' },
+  { path: '/signup', title: 'Sign Up', icon: 'nc-circle-10', class: '' },
+  { path: '/user', title: 'Users List', icon: 'nc-single-02', class: '' },
+
+  { path: '/icons', title: 'Icons', icon: 'nc-diamond', class: '' },
+  { path: '/maps', title: 'Maps', icon: 'nc-pin-3', class: '' },
+  { path: '/notifications', title: 'Notifications', icon: 'nc-bell-55', class: '' },
+
+  { path: '/table', title: 'Table List', icon: 'nc-tile-56', class: '' },
+  { path: '/typography', title: 'Typography', icon: 'nc-caps-small', class: '' },
+  // { path: '/rest',          title: 'Restauratnt',       icon:'nc-box-2',      class: '' },
+  // { path: '/item',          title: 'Item',              icon: 'nc-basket',    class: ''},
+  // { path: '/category',      title: 'Category',          icon: 'nc-tile-56',    class: ''},
 
 ];
 
 @Component({
-    moduleId: module.id,
-    selector: 'sidebar-cmp',
-    templateUrl: 'sidebar.component.html',
+  moduleId: module.id,
+  selector: 'sidebar-cmp',
+  templateUrl: 'sidebar.component.html',
 })
 
 export class SidebarComponent implements OnInit {
-    public menuItems: any[];
-    ngOnInit() {
-        this.menuItems = ROUTES.filter(menuItem => menuItem);
-    }
+  public menuItems: any[];
+  ngOnInit() {
+    this.menuItems = ROUTES.filter(menuItem => menuItem);
+  }
 }

@@ -1,7 +1,7 @@
 export class RESPONSE{
-  code: number;
-  message: string;
-  object: object;
+  code: any;
+  message: any;
+  object: any;
 }
 
 export class constant{

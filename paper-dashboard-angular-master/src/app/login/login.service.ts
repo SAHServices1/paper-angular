@@ -11,7 +11,7 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   public postData(businessEmail, password) {
-    return this.httpClient.post<RESPONSE>(constant.API+'/user/login', {
+    return this.httpClient.post<RESPONSE>(constant.API+'users/login', {
       "businessEmail": businessEmail,
       "password": password
     }, {

@@ -45,9 +45,6 @@ export class SignupComponent implements OnInit {
     this._signupService.getCountryDetail().subscribe((data)=>{
       this.CountryList = data.body.object;  
       console.log(this.CountryList);
-      // this._signupService.getCompany().subscribe((data)=>{
-      //   this.CompanyList = data.body.object;
-      //   console.log(this.CompanyList);
     })
 
     this._signupService.getCountryDetail().subscribe((data)=>{
@@ -100,18 +97,4 @@ export class SignupComponent implements OnInit {
   fileChange(event: { target: { files: File[]; }; }) {
     this.file = event.target.files[0];
   }
-
-  // onChange(){
-  //   this._signupService.getCompany().subscribe((data)=>{
-  //     this.CompanyList = data.body.object;
-  //     console.log(this.CompanyList);
-  //   })
-  // }
-
-  // onchange(){
-  //   this._signupService.getRole().subscribe((data)=>{
-  //     this.Roles = data.body.object;
-  //     console.log(this.Roles);
-  //   })
-  // }
 }

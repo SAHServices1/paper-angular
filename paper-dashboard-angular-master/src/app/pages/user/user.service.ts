@@ -14,4 +14,10 @@ export class UserService {
       observe: 'response'
     });
   }
+
+  // getCompanyData(){
+  //   return this._httpClient.get<RESPONSE>(constant.API+'company',{
+  //     observe:'response'
+  //   })
+  // }
 }
