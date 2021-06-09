@@ -104,29 +104,4 @@ export class LoginComponent implements OnInit {
       })
     }
   }
-
-  // register(image, fname, lname, email, password, mNO, address, indType, city, postalcode,
-  //   status, role, admin, company, country) {
-  //   this._loginService.registerUser(image, fname, lname, email, password, mNO, address, indType,
-  //     city, postalcode, status, role, admin, company, country).subscribe((data) => {
-  //       if (data.body.code == 1) {
-  //         this.router.navigate(['dashboard']);
-  //       }
-  //       else {
-  //         this.toaster.info(
-  //           '<span data-notify="icon" class="nc-icon nc-bell-55"></span><span data-notify="message"> ' + data.body.message + '</span>',
-  //           "",
-  //           {
-  //             timeOut: 2000,
-  //             closeButton: true,
-  //             enableHtml: true,
-  //             toastClass: "alert alert-info alert-with-icon",
-  //             positionClass: "toast-top-right"
-  //           }
-  //         );
-  //       }
-  //     }, (error) => {
-  //       console.log(error);
-  //     })
-  //   }
-  }
+}
