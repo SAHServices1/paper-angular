@@ -1,3 +1,4 @@
+import { MenuComponent } from './../../menu/menu.component';
 import { SignupComponent } from './../../signup/signup.component';
 import { Routes } from '@angular/router';
 
@@ -26,5 +27,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'rest',           component: RestaurantComponent },
     { path: 'item',           component: ItemComponent},
-    { path: 'category',       component: CategoryComponent}
+    { path: 'category',       component: CategoryComponent},
+    { path: 'menu',       component: MenuComponent}
   ];

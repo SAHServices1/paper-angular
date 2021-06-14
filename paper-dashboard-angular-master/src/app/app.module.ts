@@ -33,6 +33,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MenuComponent } from './menu/menu.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatStepperModule} from '@angular/material/stepper';
+
+
 
 @NgModule({
   declarations: [
@@ -40,7 +46,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     AdminLayoutComponent,
     ItemComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    MenuComponent
   ],
   imports: [
     MatCardModule,
@@ -68,7 +75,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     FormsModule,
     MatGridListModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

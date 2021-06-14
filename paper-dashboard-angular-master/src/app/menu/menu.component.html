@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Role Menu</h4>
+      </div>
+      <div class="card-body">
+        <!-- <h4>Select Role</h4> -->
+        <mat-form-field class="full-width">
+          <mat-label>Select Role</mat-label>
+          <mat-select [(ngModel)]="role" (change)="onChange()">
+            <mat-option *ngFor="let role of Roles" [value]="role.roleId">
+              {{role.roleName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Assigned Role</h3>
+      </div>
+      <div class="card-body">
+        <div class="divParent">
+          <div style="float: left;">
+            Select Role
+          </div>
+          <div style="float: right;">
+            <mat-checkbox class="example-margin"></mat-checkbox>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="divParent">
+          <div style="float: left;">
+            Select Role
+          </div>
+          <div style="float: right;">
+            <mat-checkbox class="example-margin"></mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Not Assigned Role</h3>
+      </div>
+      <div class="card-body">
+        <div class="divParent">
+          <div style="float: left;">
+            Select Role
+          </div>
+          <div style="float: right;">
+            <mat-checkbox class="example-margin"></mat-checkbox>
+          </div>
+        </div>
+        <br><br>
+        <div class="divParent">
+          <div style="float: left;">
+            Select Role
+          </div>
+          <div style="float: right;">
+            <mat-checkbox class="example-margin"></mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

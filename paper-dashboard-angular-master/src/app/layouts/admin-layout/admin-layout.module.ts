@@ -1,3 +1,4 @@
+// import { MenuComponent } from './../../menu/menu.component';
 
 // import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -51,6 +52,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
+    // MenuComponent
   ]
 })
 

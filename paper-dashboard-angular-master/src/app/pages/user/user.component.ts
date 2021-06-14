@@ -22,6 +22,7 @@ export class UserComponent implements OnInit {
   dataSource: any;
   displayedColumns: String[] = ['id', 'profileImage', 'firstName', 'lastName', 'mobileNo',
     'industryType', 'compName', 'companyEmail', 'countryName', 'status'];
+    
   ngOnInit() {
     this._userService.getUserData().subscribe((data) => {
       console.log(data.body.object);

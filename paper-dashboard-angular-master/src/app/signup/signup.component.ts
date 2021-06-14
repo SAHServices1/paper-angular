@@ -2,12 +2,14 @@ import { Router } from '@angular/router';
 import { SignupService } from './signup.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+
 export class SignupComponent implements OnInit {
 
   file: File = null;
@@ -15,7 +17,6 @@ export class SignupComponent implements OnInit {
   selectCompany: any = '';
   selectRole: any = '';
   selectAdmin: any = '';
-  // intlTelInput: any = '';
   profileImage: any ='';
   firstName:any = '';
   lastName: any = '';
