@@ -1,13 +1,10 @@
-// import { MenuComponent } from './../../menu/menu.component';
-
-// import { BrowserModule } from '@angular/platform-browser';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
-// import { SignupComponent } from './../../signup/signup.component';
 import { UserComponent } from '../../pages/user/user.component';
 import { TableComponent } from '../../pages/table/table.component';
 import { TypographyComponent } from '../../pages/typography/typography.component';
@@ -23,7 +20,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -41,9 +37,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatPaginatorModule
   ],
   declarations: [
-    // SignupComponent,
     DashboardComponent,
     UserComponent,
+    // CompanyComponent,
     TableComponent,
     UpgradeComponent,
     RestaurantComponent,
@@ -52,7 +48,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    // MenuComponent
   ]
 })
 

@@ -44,12 +44,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     this._signupService.getCountryDetail().subscribe((data)=>{
-      this.CountryList = data.body.object;  
-      console.log(this.CountryList);
-    })
-
-    this._signupService.getCountryDetail().subscribe((data)=>{
-      this.CountryList = data.body.object;  
+      this.CountryList = data.body.object;
       console.log(this.CountryList);
     })
 
@@ -67,6 +62,13 @@ export class SignupComponent implements OnInit {
       this.Admin = data.body.object;
       console.log(this.Admin);
     })
+  }
+
+  onChange(){
+    this._signupService.getCountryDetail().subscribe((data)=>{
+      this.CountryList = data.body.object;
+      console.log(this.CountryList);
+    })  
   }
 
   register() {

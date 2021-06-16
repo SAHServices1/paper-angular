@@ -1,3 +1,5 @@
+import { PartsComponent } from './../../parts/parts.component';
+import { CompanyComponent } from './../../company/company.component';
 import { MenuComponent } from './../../menu/menu.component';
 import { SignupComponent } from './../../signup/signup.component';
 import { Routes } from '@angular/router';
@@ -28,5 +30,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'rest',           component: RestaurantComponent },
     { path: 'item',           component: ItemComponent},
     { path: 'category',       component: CategoryComponent},
-    { path: 'menu',       component: MenuComponent}
+    { path: 'menu',       component: MenuComponent},
+    { path: 'company',       component: CompanyComponent},
+    { path: 'parts',       component: PartsComponent}
+
   ];

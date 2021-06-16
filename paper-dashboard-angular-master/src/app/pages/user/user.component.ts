@@ -1,3 +1,4 @@
+import { constant } from './../../constant/constant';
 import { MatTableDataSource } from '@angular/material/table';
 import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
@@ -23,6 +24,7 @@ export class UserComponent implements OnInit {
   displayedColumns: String[] = ['id', 'profileImage', 'firstName', 'lastName', 'mobileNo',
     'industryType', 'compName', 'companyEmail', 'countryName', 'status'];
     
+    baseUrl : any = constant.API + 'images/';
   ngOnInit() {
     this._userService.getUserData().subscribe((data) => {
       console.log(data.body.object);

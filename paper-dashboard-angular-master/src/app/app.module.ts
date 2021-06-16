@@ -1,3 +1,4 @@
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { LoginComponent } from 'app/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -37,6 +38,9 @@ import { MenuComponent } from './menu/menu.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CompanyComponent } from './company/company.component';
+import { PartsComponent } from './parts/parts.component';
 
 
 
@@ -47,7 +51,9 @@ import {MatStepperModule} from '@angular/material/stepper';
     ItemComponent,
     LoginComponent,
     SignupComponent,
-    MenuComponent
+    MenuComponent,
+    CompanyComponent,
+    PartsComponent
   ],
   imports: [
     MatCardModule,
@@ -78,7 +84,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatProgressSpinnerModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatStepperModule
+    MatStepperModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

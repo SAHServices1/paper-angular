@@ -14,12 +14,16 @@ export const ROUTES: RouteInfo[] = [
   { path: '/signup', title: 'Sign Up', icon: 'nc-circle-10', class: '' },
   { path: '/user', title: 'Users List', icon: 'nc-single-02', class: '' },
   { path: '/menu', title: 'Menu', icon: 'nc-layout-11', class: '' },
-  { path: '/icons', title: 'Icons', icon: 'nc-diamond', class: '' },
-  { path: '/maps', title: 'Maps', icon: 'nc-pin-3', class: '' },
-  { path: '/notifications', title: 'Notifications', icon: 'nc-bell-55', class: '' },
+  { path: '/company', title: 'Company', icon: 'nc-support-17', class: '' },
+  { path: '/parts', title: 'Parts', icon: 'nc-single-copy-04', class: '' },
 
-  { path: '/table', title: 'Table List', icon: 'nc-tile-56', class: '' },
-  { path: '/typography', title: 'Typography', icon: 'nc-caps-small', class: '' },
+
+  // { path: '/icons', title: 'Icons', icon: 'nc-diamond', class: '' },
+  // { path: '/maps', title: 'Maps', icon: 'nc-pin-3', class: '' },
+  // { path: '/notifications', title: 'Notifications', icon: 'nc-bell-55', class: '' },
+
+  // { path: '/table', title: 'Table List', icon: 'nc-tile-56', class: '' },
+  // { path: '/typography', title: 'Typography', icon: 'nc-caps-small', class: '' },
   // { path: '/rest',          title: 'Restauratnt',       icon:'nc-box-2',      class: '' },
   // { path: '/item',          title: 'Item',              icon: 'nc-basket',    class: ''},
   // { path: '/category',      title: 'Category',          icon: 'nc-tile-56',    class: ''},

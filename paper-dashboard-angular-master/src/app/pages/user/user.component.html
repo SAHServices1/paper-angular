@@ -6,7 +6,9 @@
 
   <ng-container matColumnDef="profileImage">
     <th mat-header-cell *matHeaderCellDef> Profile Image. </th>
-    <td mat-cell *matCellDef="let element"> {{element.profileImage}} </td>
+    <td mat-cell *matCellDef="let element">
+    <img mat-card-avator src="{{baseUrl+element.profileImage}}" alt="Profile" style="width: 50px;"/>
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="firstName">
