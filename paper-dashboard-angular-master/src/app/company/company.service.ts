@@ -14,4 +14,10 @@ export class CompanyService {
       observe: 'response'
     });
   }
+
+  getCompanyByID(id:number){
+    return this._httpClient.get<RESPONSE>(constant.API+'company'+id,{
+      observe:'response'
+    })
+  }
 }

@@ -38,9 +38,12 @@ import { MenuComponent } from './menu/menu.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CompanyComponent } from './company/company.component';
 import { PartsComponent } from './parts/parts.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+// import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+import { MatDialogModule } from '@angular/material/dialog';
+// import { DialogBoxComponent } from './DialogBox/dialog-box/dialog-box.component';
 
 
 
@@ -53,7 +56,8 @@ import { PartsComponent } from './parts/parts.component';
     SignupComponent,
     MenuComponent,
     CompanyComponent,
-    PartsComponent
+    PartsComponent,
+    // DialogBoxComponent
   ],
   imports: [
     MatCardModule,
@@ -85,7 +89,10 @@ import { PartsComponent } from './parts/parts.component';
     MatSelectModule,
     MatCheckboxModule,
     MatStepperModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSlideToggleModule,
+    // DialogBoxComponent
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

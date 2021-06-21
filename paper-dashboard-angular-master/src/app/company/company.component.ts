@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { CompanyService } from './company.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+// import { DialogBoxComponent } from '../DialogBox/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-company',
@@ -12,16 +14,19 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./company.component.css']
 })
 export class CompanyComponent implements OnInit {
+  isChecked = true;
+  CompnayByID: any = '';
 
   constructor(private _companyService: CompanyService,
     private router: Router,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    public dialog: MatDialog) { }
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
     dataSource: any;
   displayedColumns: String[] = ['compId', 'compName', 'companylogo', 'companyTitle',
-   'companyDescription', 'companyEmail', 'companyContact'];
+   'companyDescription', 'companyEmail', 'companyContact', 'action'];
 
    baseUrl: any = constant.API + 'images/';
 
@@ -38,4 +43,34 @@ export class CompanyComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  getCompnay(){
+    this._companyService.getCompanyByID(this.CompnayByID).subscribe((data)=>{
+      console.log(data.body.object);
+      this.CompnayByID = data.body.object;
+    })
+  }
+
+  // openDialog(action,obj) {
+  //   obj.action = action;
+  //   const dialogRef = this.dialog.open(DialogBoxComponent, {
+  //     width: '250px',
+  //     data:obj
+  //   });
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     if(result.event == 'Add'){
+  //       this.viewRowData(result.data);
+  //     }
+  //   });
+  // }
+
+  // viewRowData(row_obj){
+  //   var d = new Date();
+  //   this.dataSource.push({
+  //     id:d.getTime(),
+  //     name:row_obj.name
+  //   });
+  //   this.dataSource.renderRows();
+
+  // }
 }

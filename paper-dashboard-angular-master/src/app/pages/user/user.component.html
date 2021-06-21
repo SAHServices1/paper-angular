@@ -1,3 +1,10 @@
+<mat-form-field style="width: 100%;">
+  <mat-label>
+    Search User
+  </mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Search User" />
+  </mat-form-field>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> Id. </th>
