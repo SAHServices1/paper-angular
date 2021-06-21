@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { CompanyService } from './company.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-// import { DialogBoxComponent } from '../DialogBox/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-company',
@@ -14,8 +13,9 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./company.component.css']
 })
 export class CompanyComponent implements OnInit {
-  isChecked = true;
+  isChecked = false;
   CompnayByID: any = '';
+  cardBool: any = false;
 
   constructor(private _companyService: CompanyService,
     private router: Router,
@@ -43,11 +43,13 @@ export class CompanyComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  getCompnay(){
-    this._companyService.getCompanyByID(this.CompnayByID).subscribe((data)=>{
+  openDialog(compid){
+    this._companyService.getCompanyByID(compid).subscribe((data)=>{
       console.log(data.body.object);
       this.CompnayByID = data.body.object;
     })
+    this.cardBool = true;
+    // alert(compid);
   }
 
   // openDialog(action,obj) {
