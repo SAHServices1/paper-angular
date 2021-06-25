@@ -22,29 +22,31 @@ export class CompanyComponent implements OnInit {
     private toastr: ToastrService,
     public dialog: MatDialog) { }
 
-    @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
-    dataSource: any;
+  dataSource: any;
   displayedColumns: String[] = ['compId', 'compName', 'companylogo', 'companyTitle',
-   'companyDescription', 'companyEmail', 'companyContact', 'action'];
+    'companyDescription', 'companyEmail', 'companyContact', 'action'];
 
-   baseUrl: any = constant.API + 'images/';
+  baseUrl: any = constant.API + 'images/';
 
   ngOnInit() {
-    this._companyService.getAllCompany().subscribe((data)=>{
+    this._companyService.getAllCompany().subscribe((data) => {
       console.log(data.body.object);
       this.dataSource = new MatTableDataSource(data.body.object);
       this.dataSource.paginator = this.paginator;
     })
   }
 
-  applyFilter(event: Event){
+  /* Code For Serach Filter */
+  applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openDialog(compid){
-    this._companyService.getCompanyByID(compid).subscribe((data)=>{
+  /* Calling Service For Dialog Box For view Details */
+  openDialog(compid) {
+    this._companyService.getCompanyByID(compid).subscribe((data) => {
       console.log(data.body.object);
       this.CompnayByID = data.body.object;
     })
@@ -52,27 +54,27 @@ export class CompanyComponent implements OnInit {
     // alert(compid);
   }
 
-  // openDialog(action,obj) {
-  //   obj.action = action;
-  //   const dialogRef = this.dialog.open(DialogBoxComponent, {
-  //     width: '250px',
-  //     data:obj
-  //   });
+  /*  openDialog(action,obj) {
+     obj.action = action;
+     const dialogRef = this.dialog.open(DialogBoxComponent, {
+       width: '250px',
+       data:obj
+     });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     if(result.event == 'Add'){
-  //       this.viewRowData(result.data);
-  //     }
-  //   });
-  // }
+     dialogRef.afterClosed().subscribe(result => {
+       if(result.event == 'Add'){
+         this.viewRowData(result.data);
+       }
+     });
+   }
 
-  // viewRowData(row_obj){
-  //   var d = new Date();
-  //   this.dataSource.push({
-  //     id:d.getTime(),
-  //     name:row_obj.name
-  //   });
-  //   this.dataSource.renderRows();
+   viewRowData(row_obj){
+     var d = new Date();
+     this.dataSource.push({
+       id:d.getTime(),
+       name:row_obj.name
+     });
+     this.dataSource.renderRows();
 
-  // }
+   } */
 }

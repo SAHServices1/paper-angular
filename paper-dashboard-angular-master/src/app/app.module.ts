@@ -43,7 +43,7 @@ import { PartsComponent } from './parts/parts.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 // import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import { MatDialogModule } from '@angular/material/dialog';
-// import { DialogBoxComponent } from './DialogBox/dialog-box/dialog-box.component';
+
 
 
 
@@ -57,7 +57,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     MenuComponent,
     CompanyComponent,
     PartsComponent,
-    // DialogBoxComponent
   ],
   imports: [
     MatCardModule,

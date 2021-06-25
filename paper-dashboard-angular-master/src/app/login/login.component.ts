@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   signupButton: any = '';
   loginButton: any = '';
   userForms: any = '';
+  valid: any = '';
 
   first: any = true;
   second: any = false;

@@ -1,4 +1,6 @@
 <div *ngIf="!cardBool">
+
+  <!-- Code for Serach Filter -->
   <mat-form-field style="width: 100%;">
     <mat-label>
       Search Company
@@ -6,6 +8,7 @@
     <input matInput (keyup)="applyFilter($event)" placeholder="Search Company" />
   </mat-form-field>
 
+  <!-- Code for Datatable -->
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
     <ng-container matColumnDef="compId">
       <th mat-header-cell *matHeaderCellDef> Id. </th>
@@ -58,6 +61,7 @@
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
 
+<!-- Code For View Details Button -->
 <div *ngIf="cardBool">
   <mat-card>
     <h1><b>Company Details</b></h1><br>

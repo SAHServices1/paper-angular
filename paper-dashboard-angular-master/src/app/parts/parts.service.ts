@@ -20,4 +20,11 @@ export class PartsService {
       observe: 'response'
     })
   }
+
+  getPartsID(id){
+    return this._httpClient.get<RESPONSE>(constant.API + 'parts/'+id,{
+      observe: 'response'
+    })
+  }
+
 }

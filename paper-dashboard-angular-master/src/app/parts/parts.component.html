@@ -1,8 +1,9 @@
-<mat-form-field style="width:100%;">
-  <mat-label>Search Parts</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Search Parts" #input>
-</mat-form-field>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+<div *ngIf="!cardBool">
+  <mat-form-field style="width:100%;">
+    <mat-label>Search Parts</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search Parts" #input>
+  </mat-form-field>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
     <ng-container matColumnDef="partId">
       <th mat-header-cell *matHeaderCellDef> Id. </th>
       <td mat-cell *matCellDef="let element"> {{element.partId}} </td>
@@ -10,26 +11,26 @@
 
     <ng-container matColumnDef="partImage">
       <th mat-header-cell *matHeaderCellDef> Part Image. </th>
-      <td mat-cell *matCellDef="let element"> 
-        <img mat-card-avator src="{{baseUrl + element.partImage}}" alt="Part Image" style="width: 50px;" > 
+      <td mat-cell *matCellDef="let element">
+        <img mat-card-avator src="{{baseUrl + element.partImage}}" alt="Part Image" style="width: 50px;">
       </td>
     </ng-container>
-  
+
     <ng-container matColumnDef="partTitle">
       <th mat-header-cell *matHeaderCellDef> Part Name. </th>
       <td mat-cell *matCellDef="let element"> {{element.partTitle}} </td>
     </ng-container>
-  
+
     <ng-container matColumnDef="partDescription">
       <th mat-header-cell *matHeaderCellDef> Part Description. </th>
       <td mat-cell *matCellDef="let element"> {{element.partDescription}} </td>
     </ng-container>
-  
+
     <ng-container matColumnDef="partNumber">
       <th mat-header-cell *matHeaderCellDef> Part Number. </th>
       <td mat-cell *matCellDef="let element"> {{element.partNumber}} </td>
     </ng-container>
-  
+
     <ng-container matColumnDef="partQuantity">
       <th mat-header-cell *matHeaderCellDef> Part Quamtity. </th>
       <td mat-cell *matCellDef="let element"> {{element.partQuantity}} </td>
@@ -39,8 +40,90 @@
       <th mat-header-cell *matHeaderCellDef> Part Price. </th>
       <td mat-cell *matCellDef="let element"> {{element.partPrice}} </td>
     </ng-container>
-  
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element" class="action-link">
+        <button mat-icon-button color="primary" (click)="openDialog(element.partId)" title="View Part">
+          <mat-icon>preview</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<div *ngIf="cardBool">
+  <mat-card>
+    <h1><b>Parts Details</b></h1><br>
+    <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Parts ID.</b></mat-label>
+        <input matInput disabled value={{PartID.partId}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Parts Title.</b></mat-label>
+        <input matInput disabled value={{PartID.partTitle}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Parts Description.</b></mat-label>
+        <input matInput disabled value={{PartID.partDescription}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Parts Number.</b></mat-label>
+        <input matInput disabled value={{PartID.partNumber}} />
+      </mat-form-field> &nbsp;&nbsp;
+    </div>
+
+    <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Parts Image.</b></mat-label>
+        <input matInput disabled value={{PartID.partImage}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Parts Condition.</b></mat-label>
+        <input matInput disabled value={{PartID.partCondId.partConditionName}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Parts Quantity.</b></mat-label>
+        <input matInput disabled value={{PartID.partQuantity}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Parts Price.</b></mat-label>
+        <input matInput disabled value={{PartID.partPrice}} />
+      </mat-form-field> &nbsp;&nbsp;
+    </div>
+
+    <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Parts Country.</b></mat-label>
+        <input matInput disabled value={{PartID.partCountryLocation}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Alternate Parts.</b></mat-label>
+        <input matInput disabled value={{PartID.alternatePart}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Aircraft Type.</b></mat-label>
+        <input matInput disabled value={{PartID.aircraftType}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Engine Type.</b></mat-label>
+        <input matInput disabled value={{PartID.engineType}} />
+      </mat-form-field> &nbsp;&nbsp;
+    </div>
+  </mat-card><br>
+  <button (click)="cardBool=false">Back</button>
+</div>

@@ -13,6 +13,8 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 
 export class UserComponent implements OnInit {
+  UserID: any = '';
+  cardBool: any = false;
 
   constructor(private _userService: UserService,
     private router: Router,
@@ -22,8 +24,8 @@ export class UserComponent implements OnInit {
 
   dataSource: any;
   displayedColumns: String[] = ['id', 'profileImage', 'firstName', 'lastName', 'mobileNo',
-    'industryType', 'compName', 'companyEmail', 'countryName', 'status'];
-    
+    'industryType', 'compName', 'companyEmail', 'countryName', 'status', 'action'];
+
     baseUrl : any = constant.API + 'images/';
   ngOnInit() {
     this._userService.getUserData().subscribe((data) => {
@@ -36,6 +38,14 @@ export class UserComponent implements OnInit {
   applyFilter(event: Event){
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  openDialog(userid){
+    this._userService.getUSerByID(userid).subscribe((data)=>{
+      console.log(data.body.object);
+      this.UserID = data.body.object;
+    });
+    this.cardBool = true;
   }
 
 }

@@ -7,17 +7,18 @@ import { Injectable } from '@angular/core';
 })
 export class CompanyService {
 
-  constructor(private _httpClient:HttpClient) { }
+  constructor(private _httpClient: HttpClient) { }
 
-  getAllCompany(){
-    return this._httpClient.get<RESPONSE>(constant.API+'company',{
+  getAllCompany() {
+    return this._httpClient.get<RESPONSE>(constant.API + 'company', {
       observe: 'response'
     });
   }
 
-  getCompanyByID(id){
-    return this._httpClient.get<RESPONSE>(constant.API+'company/'+id,{
-      observe:'response'
-    })
+  /* GET Company By ID Service */
+  getCompanyByID(id) {
+    return this._httpClient.get<RESPONSE>(constant.API + 'company/' + id, {
+      observe: 'response'
+    });
   }
 }

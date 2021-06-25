@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatTableModule,
     MatCheckboxModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCardModule
   ],
   declarations: [
     DashboardComponent,

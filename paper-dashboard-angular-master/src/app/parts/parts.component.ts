@@ -15,6 +15,8 @@ export class PartsComponent implements OnInit {
   PartsList: any = '';
   part: any = '';
   Parts: any = '';
+  PartID: any = '';
+  cardBool: any = false;
 
   constructor(private _partsService:PartsService,
     private router:Router,
@@ -24,7 +26,9 @@ export class PartsComponent implements OnInit {
 
     dataSource: any = '';
     displayedColumns: String[] = ['partId', 'partImage', 'partTitle', 'partDescription',
-    'partNumber', 'partQuantity', 'partPrice'];
+    'partNumber', 'partQuantity', 'partPrice', 'action'];
+
+
 
   baseUrl: any = constant.API + '/images/';
 
@@ -45,6 +49,14 @@ export class PartsComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  
+
+  openDialog(partid){
+    this._partsService.getPartsID(partid).subscribe((data)=>{
+      console.log(data.body.object);
+      this.PartID = data.body.object;
+    });
+    this.cardBool = true;
+  }
+
 }
 
