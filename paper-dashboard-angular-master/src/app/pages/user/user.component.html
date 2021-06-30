@@ -1,4 +1,4 @@
-<div *ngIf="!cardBool">
+<div *ngIf="cardBool">
   <mat-form-field style="width: 100%;">
     <mat-label>
       Search User
@@ -62,11 +62,13 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef> Action </th>
       <td mat-cell *matCellDef="let element" class="action-link">
-        <button mat-icon-button color="primary" (click)="openDialog(element.userId)" title="View Part">
+        <button mat-icon-button color="primary" (click)="openDialog(element.userId)"
+         title="View Part">
           <mat-icon>preview</mat-icon>
         </button>
-        <button mat-icon-button color="dark" (click)="openDialog(element.userId)" title="View Part">
-          <mat-icon>eidt</mat-icon>
+        <button mat-icon-button color="dark" (click)="openDialog1(element.userId)"
+         title="Edit Part">
+          <mat-icon>update</mat-icon>
         </button>
       </td>
     </ng-container>
@@ -77,11 +79,15 @@
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
 
-<div *ngIf="cardBool">
+<!-- View User Details -->
+<div *ngIf="cardBool1">
   <mat-card>
     <h1><b>User Details</b></h1><br>
     <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;
-      <mat-form-field style="width: 24%;">
+
+      <img mat-card-avatar src="{{baseUrl + UserID.profileImage}}" alt="Image" />&nbsp;&nbsp;
+
+      <mat-form-field style="width: 20%;">
         <mat-label><b>User ID.</b></mat-label>
         <input matInput disabled value={{UserID.userId}} />
       </mat-form-field> &nbsp;&nbsp;
@@ -113,12 +119,8 @@
         <input matInput disabled value={{UserID.mobileNo}} />
       </mat-form-field> &nbsp;&nbsp;
 
-      <mat-form-field style="width: 24%;">
-        <mat-label><b>Profile Image.</b></mat-label>
-        <input matInput disabled value={{UserID.profileImage}} />
-      </mat-form-field> &nbsp;&nbsp;
 
-      <mat-form-field style="width: 24%;">
+      <mat-form-field style="width: 48%;">
         <mat-label><b>Address.</b></mat-label>
         <input matInput disabled value={{UserID.address}} />
       </mat-form-field> &nbsp;&nbsp;
@@ -145,7 +147,85 @@
         <input matInput disabled value={{UserID.status}} />
       </mat-form-field> &nbsp;&nbsp;
     </div>
+    <div style="text-align: center;">
+      <button (click)="cardBool=true;cardBool1=false; cardBool2=false">Back</button>&nbsp;&nbsp;
+      <!-- <button (click)="cardBool=false">Update</button> -->
+    </div>
+  </mat-card>
+</div>
 
-  </mat-card><br>
-  <button (click)="cardBool=false">Back</button>
+<!-- Update User Details -->
+<div *ngIf="cardBool2">
+  <mat-card>
+    <h1><b>User Update</b></h1><br>
+    <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <img mat-card-avatar src="{{baseUrl + UserID.profileImage}}" alt="Image" />&nbsp;&nbsp;
+
+      <mat-form-field style="width: 20%;">
+        <mat-label><b>User ID.</b></mat-label>
+        <input matInput disabled value={{UserID.userId}} #idUpdate/>
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>First Name.</b></mat-label>
+        <input matInput value={{UserID.firstName}} #fisrtName />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Last Name.</b></mat-label>
+        <input matInput value={{UserID.lastName}} #lastName />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Business Email.</b></mat-label>
+        <input matInput disabled value={{UserID.businessEmail}} />
+      </mat-form-field> &nbsp;&nbsp;
+    </div>
+
+    <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Password.</b></mat-label>
+        <input matInput disabled value={{UserID.password}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Mobile No.</b></mat-label>
+        <input matInput value={{UserID.mobileNo}} #mobileNo />
+      </mat-form-field> &nbsp;&nbsp;
+
+
+      <mat-form-field style="width: 48%;">
+        <mat-label><b>Address.</b></mat-label>
+        <input matInput value={{UserID.address}} #address />
+      </mat-form-field> &nbsp;&nbsp;
+    </div>
+
+    <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Industry Type.</b></mat-label>
+        <input matInput disabled value={{UserID.industryType}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>City.</b></mat-label>
+        <input matInput  value={{UserID.city}} #city />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Postal Code.</b></mat-label>
+        <input matInput disabled value={{UserID.postalCode}} />
+      </mat-form-field> &nbsp;&nbsp;
+
+      <mat-form-field style="width: 24%;">
+        <mat-label><b>Status.</b></mat-label>
+        <input matInput disabled value={{UserID.status}} />
+      </mat-form-field> &nbsp;&nbsp;
+    </div>
+    <div style="text-align: center;">
+      <button (click)="cardBool=true;cardBool1=false; cardBool2=false">Back</button>&nbsp;&nbsp;
+      <button (click)="openDialogUpdate(idUpdate.value, fisrtName.value, lastName.value,
+      mobileNo.value, city.value, address.value)" value="update">Update</button>
+    </div>
+  </mat-card>
 </div>

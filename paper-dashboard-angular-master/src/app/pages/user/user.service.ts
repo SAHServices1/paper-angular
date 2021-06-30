@@ -8,17 +8,29 @@ import { identifierModuleUrl } from '@angular/compiler';
 })
 export class UserService {
 
-  constructor(private _httpClient:HttpClient) { }
+  constructor(private _httpClient: HttpClient) { }
 
-  getUserData(){
-    return this._httpClient.get<RESPONSE>(constant.API+'users',{
+  getUserData() {
+    return this._httpClient.get<RESPONSE>(constant.API + 'users', {
       observe: 'response'
     });
   }
 
-  getUSerByID(id){
-    return this._httpClient.get<RESPONSE>(constant.API+'users/'+id,{
-      observe:'response'
+  getUSerByID(id) {
+    return this._httpClient.get<RESPONSE>(constant.API + 'users/' + id, {
+      observe: 'response'
+    });
+  }
+
+  updateUserByID(id, firstName, lastName, mobileNo, city, address) {
+    return this._httpClient.post<RESPONSE>(constant.API + 'users/updateUser/' + id, {
+      "firstName": firstName,
+      "lastName": lastName,
+      "mobileNo": mobileNo,
+      "city": city,
+      "address": address
+    }, {
+      observe: 'response'
     });
   }
 }

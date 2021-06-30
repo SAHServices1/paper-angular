@@ -120,17 +120,21 @@
         <input matInput disabled value={{CompnayByID.parts.partDescription}} />
       </mat-form-field>&nbsp;&nbsp;
 
-      <mat-form-field style="width: 22%;">
+      <!-- <mat-form-field style="width: 22%;">
         <mat-label><b>Part Image.</b></mat-label>
         <input matInput disabled value={{CompnayByID.parts.partImage}} />
-      </mat-form-field>&nbsp;&nbsp;
+      </mat-form-field>&nbsp;&nbsp; -->
+
+      <img mat-card-avatar src="{{baseUrl + CompnayByID.parts.partImage }}" alt="Image" />&nbsp;&nbsp;
+      &nbsp;&nbsp;
 
       <mat-form-field style="width: 22%;">
         <mat-label><b>Part Price.</b></mat-label>
         <input matInput disabled value={{CompnayByID.parts.partPrice}} />
       </mat-form-field>&nbsp;&nbsp;
     </div>
-
-  </mat-card><br>
-  <button (click)="cardBool=false">Back</button>
+    <div style="text-align: center;">
+    <button (click)="cardBool=false">Back</button>
+    </div>
+  </mat-card>
 </div>
